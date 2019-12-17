@@ -1,0 +1,34 @@
+<h1> Eindopdracht traineeship - Receptipedia </h1>
+
+<p>
+    De laatste drie weken van het traineeship heb ik besteed aan de eindopdracht en aan alle technologieën die daarbij
+    kwamen kijken.
+</p>
+<p>
+    Zoals elk goed idee begon deze opdracht met een praktische wens. Als kookfanaat bezit ik een collectie kookboeken
+    maar gebruik
+    ik daarvan in de praktijk slechts een handjevol favoriete gerechten. Om beter te kunnen zoeken in mijn collectie,
+    heb ik een
+    webapplicatie gebouwd waarmee je op basis van een aantal criteria (bv. een Italiaans recept met spinazie - of iets
+    anders wat
+    ik op dat moment nog in de koelkast heb liggen - en ) een lijst met mogelijke recepten voorgeschoteld krijgt, op
+    basis waarvan
+    je voor een of meerdere dagen een menu kunt samenstellen én een boodschappenlijstje kunt maken.
+</p>
+
+<p> TECHNISCHE TERMEN ALERT: DOORLEZEN OP EIGEN RISICO! </p>
+
+<p>
+    Hiervoor heb ik een databasemodel gemaakt van recepten en ingrediënten, die via een REST-controller in SpringBoot en
+    Java wordt aangeroepen (met Hibernate en JPA). Via Angular worden de door de gebruiker ingestelde filters via HTTP-requests
+    naar de backendserver gestuurd, die de  recepten terugstuurt die aan de eisen voldoen. 
+    In Angular gebruik ik hiervoor HTML, CSS, Javascript en Typescript.
+</p>
+
+<p> Nieuwsgierig? Bekijk de website via onderstaande knop!</p>
+
+<div class="websiteKnop">
+    <div class="bekijkWebsite">
+        <button mat-raised-button color="warn" (click)="gotoBekijkWebsite()"> Bekijk Receptipedia! </button>
+    </div>
+</div>

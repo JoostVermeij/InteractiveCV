@@ -1,0 +1,446 @@
+<div class="jumbotronRcpt">
+        <h1 class="jumbotronRcpt_h1" >My Recipe Books</h1>
+      </div>
+
+
+      
+      <div class="rowR" id="Zoeken">
+
+        <div class="columnR colR1" id="col1" ng-app="myFilters" ng-controller="myFltr">
+    
+            <div class="filters_label">
+                <label class="filters_label_label">
+                    <b> Filters </b>
+                </label>
+            </div>
+            <div class="filters_button">
+                <button mat-button (click)="accordionFiltersExpanded = false; resetFilters()">reset</button>
+            </div>
+            <br> <br> <br>
+            <p> Voeg hieronder filters toe: </p>
+            <br><br>
+    
+            <mat-accordion multi="true">
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Ingrediënten Inclusief </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <p class="filterText">
+                        Voeg hieronder ingrediënten die je WEL in de recepten wilt hebben
+                        <br>
+                        <br>
+                    </p>
+    
+                    <mat-form-field class="example-form-field">
+                        <input #fb1 id="inputIncl" matInput type="text" placeholder="Naam ingredient"
+                            [(ngModel)]="valueIncl" (keyup.enter)="addIngrToFilterIncl()">
+    
+                    </mat-form-field>
+    
+                    <br>
+    
+                    <mat-list-item *ngFor="let iIncl of filterIngIncl;">
+                        <div class="ingrCont">
+                            {{iIncl}} <mat-icon class="iconRemove"(click)="removeIngrFilterIncl(iIncl)" style="cursor: hand">clear</mat-icon>
+    
+                        </div>
+                    </mat-list-item>
+    
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+    
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Ingrediënten Exclusief </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <p class="filterText">
+                        Voeg hieronder ingrediënten die je NIET de recepten wilt hebben
+                        <br>
+                        <br>
+                    </p>
+    
+                    <mat-form-field class="example-form-field">
+                        <input #fb2 id="inputExcl" matInput type="text" placeholder="Naam ingredient"
+                            [(ngModel)]="valueExcl" (keyup.enter)="addIngrToFilterExcl()">
+    
+                    </mat-form-field>
+    
+                    <br>
+    
+                    <mat-list-item *ngFor="let iExcl of filterIngExcl;">
+                        <h4 mat-line>{{iExcl}}</h4>
+                        <mat-icon (click)="removeIngrFilterExcl(iExcl)" style="cursor: hand">clear</mat-icon>
+                    </mat-list-item>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Dieten </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <p class="filterText"> Toon alleen recepten die passen bij de volgende diëten: </p> <br>
+    
+                    <div class="panel-body">
+                        <div class="form-check">
+                            <input class="large_chk" value="" [(ngModel)]="checkDieet[1]" type="checkbox"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Vegetarisch
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="large_chk" value="" [(ngModel)]="checkDieet[2]" type="checkbox"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Veganistisch
+                            </label>
+                        </div>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Allergenen </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <p class="filterText"> Laat recepten weg met de volgende allergenen: </p> <br>
+    
+                    <div class="panel-body">
+                        <div class="form-check">
+                            <input class="large_chk" [(ngModel)]="checkAllergeen[1]" type="checkbox" value="" ng-model="a1"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Lactose
+                            </label></div>
+                        <div class="form-check">
+                            <input class="large_chk" [(ngModel)]="checkAllergeen[2]" type="checkbox" value="" ng-model="a2"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Noten
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="large_chk" [(ngModel)]="checkAllergeen[3]" type="checkbox" value="" ng-model="a3"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Ei
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="large_chk" [(ngModel)]="checkAllergeen[4]" type="checkbox" value="" ng-model="a4"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Vis
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="large_chk" [(ngModel)]="checkAllergeen[5]" type="checkbox" value="" ng-model="a5"
+                                (change)="chngCHK()">
+                            <label class="form-check-label">
+                                Soya
+                            </label>
+                        </div>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3>Bereidingstijd</h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <div class="panel-body">
+    
+                        <p class="filterText"> Stel hier de bereidingstijd in: </p> <br>
+    
+                        <ng5-slider [(value)]="minValDuur" [(highValue)]="maxValDuur" (mouseup)="chngSlider()"
+                            [options]="optionsRange"></ng5-slider>
+    
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3>Auteur</h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+    
+                    <p class="filterText"> Kies hier op welke auteur(s) je wilt zoeken: </p> <br>
+    
+                    <div class="panel-body">
+    
+                        <input class="large_chk" type="checkbox" [(ngModel)]="checkAuthorAlleGeen"
+                            (change)="chngAuteurAlleGeen()">
+                        <label class="form-check-label">
+                            Alle/Geen
+                        </label>
+    
+                        <ul class="chkB">
+                            <li *ngFor="let ax of authors; let ai = index">
+                                <input class="large_chk" type="checkbox" [(ngModel)]="checkAuthor[ai]" (change)="chngCHK()">
+                                <label class="form-check-label">
+                                    {{ax}}
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Gang </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <div class="panel-body">
+    
+                        <p class="filterText"> Kies hier op welke gang(en) je wilt zoeken: </p> <br>
+    
+                        <input class="large_chk" type="checkbox" [(ngModel)]="checkCourseAlleGeen"
+                            (change)="chngGangAlleGeen()">
+                        <label class="form-check-label">
+                            Alle/Geen
+                        </label>
+    
+                        <ul class="chkB">
+                            <li *ngFor="let cx of courses; let ci = index">
+                                <input class="large_chk" type="checkbox" [(ngModel)]="checkCourse[ci]" (change)="chngCHK()">
+                                <label class="form-check-label">
+                                    {{cx}}
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel [expanded]="accordionFiltersExpanded">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Keuken </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <p class="filterText"> Kies hier op welke keuken(s) je wilt zoeken: </p> <br>
+    
+                    <input class="large_chk" type="checkbox" [(ngModel)]="checkKitchenAlleGeen"
+                        (change)="chngKeukenAlleGeen()">
+                    <label class="form-check-label">
+                        Alle/Geen
+                    </label>
+    
+                    <div class="panel-body">
+                        <ul class="chkB">
+                            <li *ngFor="let kx of kitchens; let ki = index">
+                                <input class="large_chk" type="checkbox" [(ngModel)]="checkKitchen[ki]"
+                                    (change)="chngCHK()">
+                                <label class="form-check-label">
+                                    {{kx}}
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+            </mat-accordion>
+    
+        </div>
+    
+        <div class="columnR colR2" id="col2" ng-app="myApp" ng-controller="myCtrl" position="relative">
+    
+            <div class="recept_count">
+                <h3> Uw zoekopdracht leverde {{datacount}} resultaten op: </h3>
+            </div> <br>
+    
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+                <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+    
+                <!-- Position Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let rcpt">
+    
+    
+                        <div class="rcpt_img">
+                            <img [src]="getImagePath(rcpt.id)" class="img_rcpt" /> <br>
+                        </div>
+    
+                        <div class="rcpt_details">
+    
+                            <div class="details_labels">
+    
+                                <div class="label_rcpt_naam">
+                                    <div class=label_rcpt_naam_label>
+                                        <b> {{rcpt.naam}} </b>
+                                    </div>
+                                    <div class=label_rcpt_naam_allergy>
+                                        <img *ngIf="hasAllergy(rcpt, 'a1')" [src]="getAllergyImagePath('a1')"
+                                            class="allergy_img">
+                                        <img *ngIf="hasAllergy(rcpt, 'a2')" [src]="getAllergyImagePath('a2')"
+                                            class="allergy_img">
+                                        <img *ngIf="hasAllergy(rcpt, 'a3')" [src]="getAllergyImagePath('a3')"
+                                            class="allergy_img">
+                                        <img *ngIf="hasAllergy(rcpt, 'a4')" [src]="getAllergyImagePath('a4')"
+                                            class="allergy_img">
+                                        <img *ngIf="hasAllergy(rcpt, 'a5')" [src]="getAllergyImagePath('a5')"
+                                            class="allergy_img">
+                                    </div>
+                                </div>
+                                <br> <br>
+                                <label class="label_rcpt_subnaam">
+                                    {{rcpt.subnaam}}
+                                </label>
+                                <br> <br>
+    
+                            </div>
+    
+                            <div class="details_table">
+                                <table class="tbl1">
+                                    <th *ngFor="let mh of meta_headers"> {{mh}}</th>
+                                    <tr>
+                                        <td> {{rcpt.duur}} </td>
+                                        <td> {{rcpt.keuken}} </td>
+                                        <td> {{rcpt.gang}} </td>
+                                        <td> {{rcpt.auteur}} </td>
+                                        <td> {{rcpt.porties}} </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+    
+                            <div class="details_buttons">
+                                <div class="details_bottons_1">
+                                    <button mat-raised-button class="btnR" #btnTI (click)="showIngr(rcpt)">
+                                        Toon ingredienten
+                                    </button>
+                                </div>
+                                <div class="details_bottons_2">
+                                    <button mat-raised-button class="btnR" #btnVT (click)="addRcpt(rcpt)">
+                                        Voeg toe!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+    
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns; "></tr>
+    
+    
+            </table>
+    
+    
+        </div>
+    
+        <div class="columnR colR3" id="col3" ng-app="myResult" ng-controller="myCtrlResult">
+    
+            <div class="personen">
+                <div class="personen_min">
+                    <button class="persoon_icon" mat-button (click)="adjustGuestsMinus()">
+                        <img class="persoon_icon" [src]="getButtonImagePathMinus()">
+                    </button>
+                </div>
+    
+                <div class="personen_pp">
+                    <div class="personen_pp_img" *ngFor="let guest of guestArr">
+                        <img class="persoon_icon" [src]="getGuestImagePath()">
+                    </div>
+                </div>
+    
+                <div class="personen_plus">
+                    <button class="persoon_icon" mat-button (click)="adjustGuestsPlus()">
+                        <img class="persoon_icon" [src]="getButtonImagePathPlus()">
+                    </button>
+                </div>
+    
+                <br>
+    
+            </div>
+    
+            <mat-accordion multi="true">
+                <mat-expansion-panel expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Ingrediëntenlijst </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <div *ngIf="!chosenRcpt?.length"> Kies een recept waarvan je de ingrediëntenlijst wilt zien... </div>
+    
+                    <div *ngIf="chosenRcpt?.length">
+                        <div *ngFor="let chRcpt of chosenRcpt"> <b> {{chRcpt.naam}} </b> </div>
+    
+                        <ul>
+                            <li *ngFor="let ai of ingr">
+                                {{ai.ingrNaam + " - " + ai.ingrHoeveelheid + " " + ai.ingrEenheid}}
+                            </li>
+                        </ul>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+                <mat-expansion-panel expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h3> Receptenlijst </h3>
+                        </mat-panel-title>
+                        <mat-panel-description> </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                    <div *ngFor="let ar of receptenlijst" class="rcpt_list_img">
+                        <img [src]="getImagePath(ar.id)" matTooltip={{ar.naam}} class="img_rcptList" /> <br>
+                    </div>
+    
+                    <button mat-raised-button class="btnR" (click)="makeList()"> Maak een boodschappenlijst! </button>
+    
+                </mat-expansion-panel>
+    
+            </mat-accordion>
+        </div>
+    </div>
+    
+    <div class="rcptFooter">
+        <br>
+        <div class="rcptFooter_text">
+            (C) Joost Vermeij 2019
+        </div>
+    </div>

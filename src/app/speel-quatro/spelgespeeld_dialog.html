@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Dag Speler, {{data.resultaat}}</h1>
+
+<div mat-dialog-content>
+    <div class="dialog_text">
+        <div *ngIf="data.resultaat==='winst'">
+            <p> Je hebt gewonnen! Nog een potje? </p>
+        </div>
+        <div *ngIf="data.resultaat==='verlies'">
+            <p> Oei, het spel heeft je ingemaakt! Zin in revance? </p>
+        </div>
+        <p> Of wil je door naar de rest van deze interactieve cv? </p>
+    </div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="onNoClick()"> Stuur me door </button>
+    <button mat-button mat-dialog-close (click)="onYesClick()" cdkFocusInitial> Nog een keer! </button>
+</div>

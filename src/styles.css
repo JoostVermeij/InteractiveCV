@@ -1,0 +1,569 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.div_legenda {
+  padding-top: 20px;
+}
+
+.div_legenda p {
+  font-size: 10px;
+  margin: 2px;
+}
+
+.div_legenda ul {
+  margin: 0px;
+  padding-inline-start: 20px;
+}
+
+.div_legenda il {
+  padding: 0px;
+}
+
+.websiteKnop {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.div_canvas {
+  padding: 5px;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.div_canvas p {
+  font-size: 10px;
+}
+
+.canvas {
+  height: 90%;
+  clear:both;
+}
+
+.mat-tab-label {
+  color: white;
+  width: 100px;
+}
+
+.mat-tab-group {
+  padding-top: 10px;
+}
+
+.rowR:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+  .rowCV {
+    height: 10ovh;
+  }
+
+  .column {
+    float: left;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+
+  p {
+    color: white;
+  }
+
+ .rowR p {
+   color: black;
+ }
+
+  h1 {
+    color: rgb(5, 175, 179)
+  }
+
+  .col1 {
+    width: 4vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .col2 {
+    width: 12vw;
+    height: 100vh;
+    background-color:rgb(1, 70, 71);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .card_naam {
+        width: 90%;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .whiteLblNaam {
+        color: white;
+        font-size: 24px;
+    }
+
+    .card_img {
+        width: 90%;
+    }
+
+    .profielImg {
+        width: 100%;
+    }
+
+    .card_buttons_links {
+        height: 40px;
+        display: flex;   
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .linkButton {
+        width: 40px;
+        height: 40px;
+        padding: 1px;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+    .linkImg {
+        width: 90%;
+        height: 90%;
+    }
+
+    .card_buttons_dwnld {
+        width: 90%;
+        padding-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+
+  .col3, .col5 {
+    width: 3vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .btnArrow {
+        width: 95%;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;
+        outline:none;
+    }
+    .arrowLeft {
+        width: 100%;
+    }
+    .arrowRight {
+        width: 100%;
+    }
+
+  .col4 {
+    width: 66vw;
+    height: 100vh;
+    background-color:  rgb(0, 0, 0);
+    
+  }
+  
+    .full {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        .centered {
+            width: 70%;
+        }
+
+
+.div_speel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quatro_veld {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+    .quatro_veld_label {
+        width: 220px;
+        height: 100%;
+        background-color: black;
+        font-size: 14px;
+        font-family: "Courier New";
+        white-space: pre;
+        cursor: pointer;
+    }
+
+.quatro_output {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+    .quatro_output_area {
+        background-color: black;
+        font-size: 14px;
+        font-family: "Courier New";
+        white-space: pre;
+        width: 300px;
+        height: 100%;
+    }
+
+
+.imgFold {
+    width: 100%;
+    height: 100px;
+}
+
+
+
+
+.imgQuatro {
+    width: 30%;
+    padding: 5px;
+}
+
+.dialog_text p {
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.matNavBar {
+    background-color: #72a441
+  }
+  
+  b.blink {
+    color: white;
+  }
+  
+  .btnR {
+    background-color: darkseagreen;
+    color: green;
+  }
+  
+  .wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+  
+  .link-caption {
+    color: grey;
+    padding-left: 5px;
+  }
+  
+  .rcptFooter {
+    width: 100%;
+    height: 200px;
+    background-color: #888;
+    text-align: center;
+  }
+  
+  .rcpFooter_text {
+    width: 100%;
+    
+  }
+  
+  .mat-tab-nav-bar {
+    background-color: green;
+  }
+  
+  .iconRemove {
+     cursor: pointer;
+     float: right;
+  }
+  
+  
+    .ingrCont {
+      width: 100%;
+    }
+  
+    .ingrC2 {
+      float: left;
+      width: 80%;
+    }
+    .ingrC2 {
+      float: right;
+    }
+  
+    .filterText {
+      font-size: 18px;
+    }
+  
+  .nav.mat-nav-tab-bar {
+    background-color: #333;
+  }
+  
+    .minSlider {
+      text-align: center;
+    }
+  
+    .maxSlider {
+      text-align: center;
+    }
+  
+    .large_chk {
+      width: 18px; 
+      height: 18px;
+    }
+  
+    .chkB {
+    padding-left: 2px; 
+    padding-right: 5px;
+    list-style: none;
+    }
+  
+    .form-check-label {
+      font-size: 18px;
+    }
+  
+    .columnR {
+      float: left;
+      padding: 10px;
+    }
+    
+    .colR1, .colR3 {
+      width: 22%;
+    }
+    
+    .colR2 {
+      width: 50%;
+    }
+    
+    .colB1, .colB3 {
+      width: 10%;
+    }
+    
+    .colB2 {
+      width: 75%;
+    }
+  
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    .jumbotronRcpt {
+      background-image: url('https://www.the-bootclub.com/wp-content/uploads/2017/06/groenten-inname-verhogen.jpg');
+      margin-bottom: 0;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .jumbotronRcpt_h1 {
+      color: white;
+      font-size: 64px;
+      align-content: center;
+    }
+    
+    .allergy_img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .label_rcpt_naam_label {
+      float: left;
+      font-size: 24px;
+    }
+  
+    .label_rcpt_naam_allergy {
+      float: right;
+    }
+  
+    .personen {
+      display: flex;
+      flex-direction: row;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  
+    .personen_pp {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .persoon_icon {
+      width: 30px;
+      height: 30px;
+    }
+  
+    #colR1 {
+    padding-left: 25px;
+    }
+  
+    .recept {
+      height: 240px;
+      overflow: hidden;
+    }
+      .rcpt_img {
+        float: left;
+        width: 40%;
+        padding-left: 5px;
+        padding-right: 15px;
+        vertical-align: middle;
+      }
+        .img_rcpt {
+          height: auto;
+          width: 80%;
+          padding: 5px;
+          object-fit: contain;
+        }
+      .rcpt_details {
+          overflow: hidden;
+          height: 85%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-top: 1%;
+          padding-bottom: 4%;
+      }
+        .details_labels {
+          width: 100%;
+        }
+        .tbl1 td {
+          padding-right: 20px;
+        }
+          .label_recept_naam{
+            font-size: 24px;
+          }
+          .label_recept_subnaam{
+              font-size: 18px;
+          }
+  
+          .details_bottons_1 {
+            padding-right: 15px;
+            float: right;
+          }
+          .details_bottons_2 {
+            padding-right: 15px;
+            float: right;
+          }
+  
+          .img_rcptList {
+            width: 70%;
+            height: 70%;
+  
+          }
+  
+          .mat-cell {
+            padding: 8px 8px 8px 0;
+          }
+  
+    .filters_label {
+      float: left;
+      
+    }
+  
+    .filters_label_label {
+      font-size: 24px;
+    }
+  
+    .filters_button {
+      float: right;
+    }
+  
+    .mat-elevation-z8 {
+      width: 90%;
+    }
+  
+    .example-radio-group {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+    }
+    
+    .example-radio-button {
+      margin: 5px;
+    }
+  
+    .tbl1.td {
+      align-content: center;
+    }
+  
+    #btnVT {
+      float: right;
+    }
+  
+    #ingrIncl {
+      background-color: aqua;
+      border: 1px solid black;
+    }
+    
+    #ingrExcl {
+      background-color: coral;
+      border: 1px solid black;
+    }
+    
+    #pn1 {
+      border: 1px solid grey;
+    }
+  
+    .panel-body {
+      padding-left: 5px;
+    }
+
+    
+    
+    
+    

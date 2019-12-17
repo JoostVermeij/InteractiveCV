@@ -1,0 +1,60 @@
+<h1> Skills</h1>
+
+<p> Zie hieronder voor een overzicht van mijn skills. </p>
+
+
+
+<div class="div_canvas">
+    <mat-tab-group>
+        <mat-tab label="Talen">
+            <p> Klik op de tabbladen hierboven om de verschillende categorieën in meer detail te bekijken. </p>
+            <canvas class="canv" height="85%" baseChart [datasets]="barChartProgrammeertalenData"
+                [labels]="barChartProgrammeertalenLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </mat-tab>
+        <mat-tab label="Backend">
+            <p> Klik op de tabbladen hierboven om de verschillende categorieën in meer detail te bekijken. </p>
+            <canvas class="canv" height="85%" baseChart [datasets]="barChartBackendData"
+                [labels]="barChartBackendLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </mat-tab>
+        <mat-tab label="Frontend">
+            <p> Klik op de tabbladen hierboven om de verschillende categorieën in meer detail te bekijken. </p>
+            <canvas class="canv" height="85%" baseChart [datasets]="barChartFrontendData"
+                [labels]="barChartFrontendLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </mat-tab>
+        <mat-tab label="Overige">
+            <p> Klik op de tabbladen hierboven om de verschillende categorieën in meer detail te bekijken. </p>
+            <canvas class="canv" height="85%" baseChart [datasets]="barChartOverigeData"
+                [labels]="barChartOverigeLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </mat-tab>
+        <mat-tab label="Soft Skills">
+            <p> Klik op de tabbladen hierboven om de verschillende categorieën in meer detail te bekijken. </p>
+            <canvas class="canv" height="85%" baseChart [datasets]="barChartSoftskillsData"
+                [labels]="barChartSoftskillsLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<div class="div_legenda">
+    <p>Legenda: </p>
+    <ul class="list_legenda">
+        <li>
+            <p> 1: Beginner, praktische ervaring minder dan een half jaar </p>
+        </li>
+        <li>
+            <p> 2: Intermediate, praktische ervaring tussen een half en twee jaar </p>
+        </li>
+        <li>
+            <p> 3: Gevorderd, praktische ervaring meer dan twee jaar </p>
+        </li>
+    </ul>
+</div>
